@@ -12,3 +12,9 @@ yarn add webpack-dev-server -D
 -生成内存中的打包--》并非真实的打包
 ##安装html插件生成模板插入dist文件下
 yarn add html-webpack-plugin
+
+
+##上线代码压缩
+-webpack.config.js里面改为production
+--npm run build
+---minify版配置

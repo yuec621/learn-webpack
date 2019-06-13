@@ -10,17 +10,24 @@ module.exports={
         contentBase:'./dist',
         compress:true
     },
-    mode:'development',//模式两种 production--打包之前和development--压缩之后
+    mode:'development',//模式两种 (production --上线配置)--打包之前和development--压缩之后
    entry:'./src/index.js' ,//入口
    output:{
-       filename:'bundle.js',//打包后的文件名
+       filename:'bundle.[hash:8].js',//打包后的文件名
        path:path.resolve(__dirname,'dist'),//必须为绝对路径，resolve将相对路径转化为绝对路径
 
    },
    plugins:[//数组 放着所有的webpack插件
     new HtmlWebpackPlugin({
         template:'./src/index.html',
-        filename:'index.html'
+        filename:'index.html',
+        //上线配置
+        // minify:{
+        //     removeAttributeQuotes:true,//去掉双引号
+        //     collapseWhitespace:true,//变为一行
+
+        // }
+        // hash:true//hash戳
     })
 
    ]
