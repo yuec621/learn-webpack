@@ -32,6 +32,12 @@ yarn add @babel/runtime
 ##校验js语法
 yarn add eslint eslint-loader
 
+##第三方模块的使用
+yarn add jquery
+
+##暴露全局loader
+yarn add express-loader
+
 ##上线代码压缩
 -webpack.config.js里面改为production
 --npm run build

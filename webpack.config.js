@@ -2,6 +2,7 @@
 let path=require('path')//node的核心模块---自带
 let HtmlWebpackPlugin=require('html-webpack-plugin')
 let MiniCssExtractPlugin=require('mini-css-extract-plugin')
+let webpack=require('webpack')
 // console.log(path.resolve('dist'))
 module.exports={
     //开发服务器配置
@@ -33,6 +34,9 @@ module.exports={
     new MiniCssExtractPlugin({
         filename:'main.css',
 
+    }),
+    new webpack.ProvidePlugin({//在每个模块中都注入$
+        jquery:'$'
     })
 
    ],
@@ -43,12 +47,12 @@ module.exports={
         //loader的用法  一个loader为字符串形式，多个为数组
         //从右向左执行,从上到下
         //loader还可写成对象的方式
-        {
-            test:/\.js$/,
-            use:{
-                loader:'eslint-loader'
-            }
-        },
+        // {
+        //     test:/\.js$/,
+        //     use:{
+        //         loader:'eslint-loader'
+        //     }
+        // },
 
         {test:/\.css$/,
             use:[
