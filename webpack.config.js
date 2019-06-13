@@ -1,6 +1,7 @@
 //webpack 是node写出来的 node的写法
 let path=require('path')//node的核心模块---自带
 let HtmlWebpackPlugin=require('html-webpack-plugin')
+let MiniCssExtractPlugin=require('mini-css-extract-plugin')
 // console.log(path.resolve('dist'))
 module.exports={
     //开发服务器配置
@@ -28,6 +29,10 @@ module.exports={
 
         // }
         // hash:true//hash戳
+    }),
+    new MiniCssExtractPlugin({
+        filename:'main.css',
+
     })
 
    ],
@@ -38,16 +43,25 @@ module.exports={
         //loader的用法  一个loader为字符串形式，多个为数组
         //从右向左执行,从上到下
         //loader还可写成对象的方式
+        {
+            test:/\.js$/,
+            use:{
+                loader:'eslint-loader'
+            }
+        },
+
         {test:/\.css$/,
             use:[
-                {loader:'style-loader',
-                options:{
-                    insertAt:'top'
-                }
+            //     {loader:'style-loader',
+            //     options:{
+            //         insertAt:'top'
+            //     }
             
-            },
-                   
-                    'css-loader']}
+            // },
+                   MiniCssExtractPlugin.loader,
+                   'css-loader',
+                    'postcss-loader'
+                ]}
 
     ]
 

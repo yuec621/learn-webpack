@@ -17,7 +17,20 @@ yarn add html-webpack-plugin
 ##安装css模板配置
 yarn add css-loader style-loader -D
 
+##安装抽离css插件
+yarn add mini-css-extract-pligin -D
 
+##改变样式---改变前缀
+yarn add postcss-loader autoprefixer
+##将标准语法转化为低级语法
+yarn add babel-loader @babel/core @babel/preset-env
+
+##转高级语法
+yarn add @babel/plugin-transform-runtime -D
+yarn add @babel/runtime
+
+##校验js语法
+yarn add eslint eslint-loader
 
 ##上线代码压缩
 -webpack.config.js里面改为production
