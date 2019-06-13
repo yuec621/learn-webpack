@@ -38,6 +38,13 @@ yarn add jquery
 ##暴露全局loader
 yarn add express-loader
 
+##file-loader默认会在内部生成一张图片 到dist目录下 并把生成图片的名字返回回来
+yarn add file-loader -D
+##解析html文件并编译文件
+yarn add html-withimg-loader -D
+##做一个限制 当我们的图片小于多少k的时候 用base64来转化，若大于多少k则用file-loader产生真实的图片
+yarn add url-loader -D
+
 ##上线代码压缩
 -webpack.config.js里面改为production
 --npm run build

@@ -53,6 +53,21 @@ module.exports={
         //         loader:'eslint-loader'
         //     }
         // },
+        {
+            test:/\.html$/,
+            use:'html-withimg-loader'
+        },
+
+        {
+            test:/\.(png|jpg|gif)$/,
+            // use:'file-loader'
+            use:{
+                loader:'url-loader',
+                options:{
+                    limit:200*1024
+                }
+            }
+        },
 
         {test:/\.css$/,
             use:[
