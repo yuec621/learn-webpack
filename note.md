@@ -7,3 +7,8 @@ npm i webpack -D//表示上线的时候不需要打包
 -打包（支持我们的js模块化）
 ##手动配置webpack
 -默认配置文件的名字 webpack.config.js
+##安装内置开发服务
+yarn add webpack-dev-server -D
+-生成内存中的打包--》并非真实的打包
+##安装html插件生成模板插入dist文件下
+yarn add html-webpack-plugin
