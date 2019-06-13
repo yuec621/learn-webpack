@@ -30,5 +30,26 @@ module.exports={
         // hash:true//hash戳
     })
 
-   ]
+   ],
+   module:{//模块
+    rules:[//找到一个合适的loader进行文件模块化转化,特点：希望单一
+        //css-loader---负责解析@import这种语法
+        //style-loader把css插入到head的标签中
+        //loader的用法  一个loader为字符串形式，多个为数组
+        //从右向左执行,从上到下
+        //loader还可写成对象的方式
+        {test:/\.css$/,
+            use:[
+                {loader:'style-loader',
+                options:{
+                    insertAt:'top'
+                }
+            
+            },
+                   
+                    'css-loader']}
+
+    ]
+
+   }
 }
