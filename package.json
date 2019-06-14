@@ -4,10 +4,19 @@
   "main": "index.js",
   "repository": "https://github.com/yuec621/learn-webpack.git",
   "author": "yuec621 <yuec621@outlook.com>",
+  "scripts": {
+    "dev":"webpack-dev-server",
+    "build":"webpack"
+  },
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.34.0",
-    "webpack-cli": "^3.3.4"
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.1"
   }
 }
