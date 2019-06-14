@@ -1,8 +1,13 @@
 let path=require('path')
 let HtmlWebpackPlugin=require('html-webpack-plugin')
+let CleanWebpackPlugin=require('clean-webpack-plugin')
 module.exports={
-
-    mode:'production',
+/**
+ * 1.cleanWebpackPlugin
+ * 2.copyWebpackPlugin
+ * 3.bannerPlugin//内置
+ */
+    mode:'development',
     entry:{
        home:'./src/index.js',
     //    other:'./src/other.js' 
@@ -20,12 +25,7 @@ module.exports={
             }
         ]
     },
-    watch:true,//看打包后的文件
-    // watchOptions:{//监控选项
-    //     poll:1000,//每秒1000次
-    //     aggreatement:500,//防抖
-    //     ignored:/node_modules/ //不需要进行监控哪个文件
-    // },
+  
     output:{
         //[name]home\other
         filename:'[name].js',
@@ -36,7 +36,8 @@ module.exports={
             template:'./index.html',
             filename:'index.html'
             
-        })
+        }),
+        // new CleanWebpackPlugin('./dist')
        
     ]
 }
