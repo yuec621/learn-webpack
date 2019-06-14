@@ -4,7 +4,14 @@
  */
 let express=require('express')//起个服务
 let app=express()
-app.get('/api/user',(req,res)=>{
+let webpack=require('webpack')//第三种方式跨域
+//中间件
+let middle=require('webpack-dev-middleware')
+let config=require('./webpack.config.js')
+let compiler= webpack(config)
+app.use(middle(compiler))
+
+app.get('/user',(req,res)=>{
     res.json({name:'我的webpack'})
 })
 app.listen(3000)

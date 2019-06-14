@@ -25,7 +25,27 @@ module.exports={
             }
         ]
     },
-  
+    devServer:{
+
+        //第三种---有服务端--不想用代理处理  ***在服务端中启动webpack.端口用服务端端口
+        
+
+
+        //第二种
+        // before(app){
+        //     app.get('/user',(req,res)=>{
+        //         res.json({name:'我的webpack-----'})
+        //     })
+        // }
+        //第一种
+        // proxy:{//重写 把请求代理到express服务器上
+        //     '/api':{
+                
+        //         target:'http://localhost:3000',
+        //         pathRewrite:{'/api':''}
+        //     }//配置了一个代理
+        // }
+    },
     output:{
         //[name]home\other
         filename:'[name].js',
