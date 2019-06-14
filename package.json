@@ -6,8 +6,8 @@
   "author": "yuec621 <yuec621@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "dev":"webpack-dev-server",
-    "build":"webpack"
+    "dev": "webpack-dev-server",
+    "build": "webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

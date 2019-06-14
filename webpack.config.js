@@ -5,6 +5,11 @@ module.exports={
  mode:'development',
 
 entry:'./src/index.js',
+devServer:{
+    port:3000,
+    open:true,
+    contentBase:'./dist'
+},
 module:{
     noParse:/jquery/,//不去解析jquery中的依赖库
     rules:[
@@ -27,7 +32,7 @@ output:{
     path:path.resolve(__dirname,'dist')
 },
 plugins:[
-    new webpack.IgnorePlugin(/\.\/locale/,/moment/),
+    // new webpack.IgnorePlugin(/\.\/locale/,/moment/),
     new HtmlWebpackPlugin({
         template:'./public/index.html'
     })
