@@ -15,8 +15,8 @@
  * //默认访问路径8081------服务端3000
  * 将请求先发到8081（webpack-dev-server的服务）---》再发到3000
  */
-
-
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css'
 let xhr=new XMLHttpRequest()//创建ajaxs
 xhr.open('GET','/user',true)//开启ajaxs请求，异步
 xhr.onload=function(){//打印成功的响应结果
