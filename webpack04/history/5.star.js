@@ -1,5 +1,7 @@
 let {AsyncParallelHook}=require('tapable')
-
+//异步的钩子(串行) 并行
+//同时发送多个请求
+//注册方法 分为 tap注册  tapAsync
  class Lesson{
     constructor(){
         this.index=0
